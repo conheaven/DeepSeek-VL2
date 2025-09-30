@@ -130,7 +130,7 @@ def save_generated_distribution_and_perplexity(
             inputs_embeds = model.prepare_inputs_embeds(**inputs)
 
             # 使用语言模型生成
-            outputs = model.language_model.generate(
+            outputs = model.language.generate(
                 inputs_embeds=inputs_embeds,
                 attention_mask=inputs.attention_mask,
                 pad_token_id=tokenizer.eos_token_id,
